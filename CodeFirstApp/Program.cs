@@ -2,6 +2,7 @@
 
 
 
+using CodeFirstApp;
 using CodeFirstApp.Controller;
 using CodeFirstApp.Data;
 
@@ -24,6 +25,33 @@ StudentController student = new StudentController(_context);
 
 //student.getAllStudent();
 
-student.getstudentbyid(5);
 
+
+
+TestController tt = new TestController(_context);
+//tt.createGradeStudent();
+
+//tt.createUserCourse();
+
+
+// Create - with relation - Grade one 2 many student
+// create - with relation - User many 2 many course [ pivot ] | student current class course  
+
+// loading relations : Eager loading - Lazy loading - Explicit loading
+
+
+// Recap LINQ
+// Row SQL
+// Stored proc
+
+
+
+RelationController rr = new RelationController(_context);
+//rr.createGradeStudent();
+//rr.createStudentWithGradeId(1);
+//rr.assignGradeStudent(2, 9);
+
+//rr.createUserCourse();
+
+tt.createStudentCourse();
 Console.WriteLine();

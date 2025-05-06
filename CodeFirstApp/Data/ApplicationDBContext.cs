@@ -9,7 +9,10 @@ namespace CodeFirstApp.Data
         
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("data source=.;initial catalog=codefirstdb2025;integrated security=True;MultipleActiveResultSets=True;TrustServerCertificate=True");     
+            optionsBuilder
+                //.UseLazyLoadingProxies()
+                .UseSqlServer("data source=.;initial catalog=codefirstdb2025;integrated security=True;MultipleActiveResultSets=True;TrustServerCertificate=True")
+                ;
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

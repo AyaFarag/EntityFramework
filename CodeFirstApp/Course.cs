@@ -13,6 +13,8 @@ namespace CodeFirstApp
         // public ICollection<CourseStudent> courseStudents { get; set; }
 
         public ICollection<Student> Students { get; set; }
+        public ICollection<User> Users { get; set; }
+
 
     }
 }

@@ -11,11 +11,11 @@ namespace CodeFirstApp
     {
         public int Id { get; set; }
         public int courseId { get; set; }   // revers prop
-       // [ForeignKey("courseId")]
+        [ForeignKey("courseId")]
         public virtual Course Course { get; set; }
         public int studentId { get; set; }   // revers prop
         
-       // [ForeignKey("studentId")]
+        [ForeignKey("studentId")]
         public virtual Student student { get; set; }
 
     }
