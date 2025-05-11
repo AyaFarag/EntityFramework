@@ -53,5 +53,13 @@ RelationController rr = new RelationController(_context);
 
 //rr.createUserCourse();
 
-tt.createStudentCourse();
+//tt.createStudentCourse();
+
+
+tt.getGradeWithStudents();
+//Console.WriteLine("hello world");
+
+Console.ReadLine();
+
+
 Console.WriteLine();

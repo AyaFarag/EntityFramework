@@ -51,7 +51,7 @@ namespace CodeFirstApp.Migrations
                     b.HasIndex("Student_id")
                         .IsUnique();
 
-                    b.ToTable("ContentAdress");
+                    b.ToTable("ContentAdress", (string)null);
                 });
 
             modelBuilder.Entity("CodeFirstApp.Category", b =>
@@ -73,7 +73,7 @@ namespace CodeFirstApp.Migrations
 
                     b.HasIndex("parentId");
 
-                    b.ToTable("categories");
+                    b.ToTable("categories", (string)null);
                 });
 
             modelBuilder.Entity("CodeFirstApp.Course", b =>
@@ -90,7 +90,7 @@ namespace CodeFirstApp.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("courses");
+                    b.ToTable("courses", (string)null);
                 });
 
             modelBuilder.Entity("CodeFirstApp.CourseStudent", b =>
@@ -113,7 +113,7 @@ namespace CodeFirstApp.Migrations
 
                     b.HasIndex("studentId");
 
-                    b.ToTable("courseStudents");
+                    b.ToTable("courseStudents", (string)null);
                 });
 
             modelBuilder.Entity("CodeFirstApp.Grade", b =>
@@ -130,7 +130,7 @@ namespace CodeFirstApp.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("grades");
+                    b.ToTable("grades", (string)null);
                 });
 
             modelBuilder.Entity("CodeFirstApp.Student", b =>
@@ -152,7 +152,7 @@ namespace CodeFirstApp.Migrations
 
                     b.HasIndex("Grade_id");
 
-                    b.ToTable("students");
+                    b.ToTable("students", (string)null);
                 });
 
             modelBuilder.Entity("CodeFirstApp.User", b =>
@@ -188,7 +188,7 @@ namespace CodeFirstApp.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("users");
+                    b.ToTable("users", (string)null);
                 });
 
             modelBuilder.Entity("CourseStudent", b =>
@@ -203,7 +203,7 @@ namespace CodeFirstApp.Migrations
 
                     b.HasIndex("coursesId");
 
-                    b.ToTable("CourseStudent");
+                    b.ToTable("CourseStudent", (string)null);
                 });
 
             modelBuilder.Entity("CourseUser", b =>
@@ -218,7 +218,7 @@ namespace CodeFirstApp.Migrations
 
                     b.HasIndex("UsersId");
 
-                    b.ToTable("CourseUser");
+                    b.ToTable("CourseUser", (string)null);
                 });
 
             modelBuilder.Entity("CodeFirstApp.Address", b =>

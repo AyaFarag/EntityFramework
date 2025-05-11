@@ -20,10 +20,10 @@ namespace CodeFirstApp
         public string? Name { get; set; }
 
         [IgnoreDataMember]
-        public ICollection<Category> SubCategories { get; set; }
+        public virtual ICollection<Category> SubCategories { get; set; }
         public int? parentId { get; set; }
         [ForeignKey("parentId")]
         [IgnoreDataMember]
-        public Category ParentCategory { get; set; }
+        public virtual Category ParentCategory { get; set; }
     }
 }

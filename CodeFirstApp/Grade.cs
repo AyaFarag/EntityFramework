@@ -7,6 +7,6 @@ namespace CodeFirstApp
         public int Id { get; set; }
         public string Name { get; set; }
 
-        public ICollection<Student> Students { get; set; }  // one to many // navigation prop
+        public virtual ICollection<Student> Students { get; set; }  // one to many // navigation prop
     }
 }

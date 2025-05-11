@@ -10,30 +10,37 @@ namespace CodeFirstApp.Data
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder
-                //.UseLazyLoadingProxies()
+                .UseLazyLoadingProxies()
                 .UseSqlServer("data source=.;initial catalog=codefirstdb2025;integrated security=True;MultipleActiveResultSets=True;TrustServerCertificate=True")
                 ;
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            //var allEntities = modelBuilder.Model.GetEntityTypes();
+
+            //foreach (var entity in allEntities)
+            //{
+            //    entity.AddProperty("CreatedDate", typeof(DateTime));
+            //    entity.AddProperty("UpdatedDate", typeof(DateTime));
+            //}
             //Write Fluent API configurations here
             //modelBuilder.HasDefaultSchema("Admin");
 
             //modelBuilder.Entity<User>().Property(a => a.Id).IsRequired();
-             
+
             //modelBuilder.Entity<CourseStudent>().HasKey(a => new { a.courseId , a.studentId });
 
 
-           
+
             //modelBuilder.Entity<User>()
             //    .HasIndex(a => a.Email);
-            
+
             //modelBuilder.Entity<User>()
             //    .Property(a => a.Age)
             //    .HasDefaultValue(18);
             //modelBuilder.Entity<User>().Property(a => a.Email).IsRequired(false);
-           
+
             //modelBuilder.Entity<Grade>().Property(a=>a.Name).HasMaxLength(50)
             //    .IsRequired().IsUnicode();
 
@@ -43,7 +50,7 @@ namespace CodeFirstApp.Data
             //    .HasDefaultValue("Egypt");
 
             //modelBuilder.Entity<Category>()
-          
+
             //    .ToTable("Brand");
             //modelBuilder.Entity<Category>()
             //    .Property(c => c.Name).HasColumnName("CatName");

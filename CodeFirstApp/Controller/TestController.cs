@@ -11,7 +11,7 @@ namespace CodeFirstApp.Controller
 {
     public class TestController
     {
-        public ApplicationDBContext context;
+        private ApplicationDBContext context;
         public TestController(ApplicationDBContext _context)
         {
             context = _context;
@@ -86,7 +86,7 @@ namespace CodeFirstApp.Controller
         {
             // Eager Loading 
             var users = context.users
-                        .Include(u => u.Courses) 
+                        .Include(u => u.Courses)
                         .ToList();
 
             foreach (var user1 in users)
@@ -96,7 +96,7 @@ namespace CodeFirstApp.Controller
             }
             //-----------------------------------------------------------------
             // Lazy loading
-            var user = context.users.First();
+            var user = context.users.First(); // single user
 
             foreach (var course in user.Courses) // Triggers lazy loading here
             {
@@ -114,6 +114,50 @@ namespace CodeFirstApp.Controller
             {
                 Console.WriteLine($"{user2.Name} enrolled in {course.Name}");
             }
+        }
+
+
+        public void getGradeWithStudents()
+        {
+            // product by id => images - reviews - colors - properties
+            
+            // Eager loading 
+            //var grades = context.grades.Include(s => s.Students).ToList();
+            //foreach(var grade in grades)
+            //{
+            //    Console.WriteLine($"Grade name {grade.Name}" + $" And Studend : {string.Join(",", grade.Students.Select(n => n.Name))}");
+
+            //    foreach (var student in grade.Students)
+            //    {
+            //        Console.WriteLine($"-----------Student name : {student.Name}");
+            //    }
+            //}
+        // Lazy loading
+            //var grades = context.grades.ToList();
+            //foreach (var grade in grades)
+            //{
+            //    Console.WriteLine($"ID: {grade.Id} Grade Name : {grade.Name}");
+            //    foreach (var student in grade.Students)
+            //    {
+            //        Console.WriteLine($"----SID: {student.Id} SName: {student.Name}");
+            //    }
+            //}
+            
+           
+
+        // Explicit loading
+            //var grades = context.grades.ToList();
+
+            //foreach(var grade in grades)
+            //{
+            //    context.Entry(grade).Collection(grade => grade.Students).Load();
+            //    Console.WriteLine(grade.Name);
+            //    foreach (var student in grade.Students)
+            //    {
+            //        Console.WriteLine($"Student Name: {student.Name}");
+            //    }
+
+            //}    
         }
     }
 }

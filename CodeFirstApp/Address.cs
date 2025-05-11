@@ -17,11 +17,11 @@ namespace CodeFirstApp
         public string City { get; set; }
         public string State { get; set; }
         
-        [NotMapped]
+        //[NotMapped]
         public string Country { get; set; }
 
         public int Student_id { get; set; }
         [ForeignKey("Student_id")]
-        public Student Student { get; set; }
+        public virtual Student Student { get; set; }
     }
 }
